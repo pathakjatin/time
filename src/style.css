@@ -91,3 +91,6 @@ section .stopwatch{
         justify-content: center;
         align-items: center;
 }
+section .stopwatch .stopwatchBody button{
+    color: black;
+}

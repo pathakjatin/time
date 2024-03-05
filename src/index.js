@@ -40,9 +40,58 @@ function displayCurrTime() {
     document.querySelector(".ms").innerHTML = timeString;
 }
 
+    // document.querySelector(".elapsedTime").innerHTML = currTime
+    // setInterval(()=>{
+    //     let start = document.querySelector(".start")
+    //     start.addEventListener("click",()=>{
+    //         var newSeconds = seconds - time.getSeconds() 
+    //         var newMinutes = minutes - time.getMinutes() 
+    //         var newHours = hours - time.getHours() 
+    //         var updatedTime = newHours + ":" + newMinutes + ":" + newSeconds
+            
+    //         document.querySelector(".elapsedTime").innerHTML = updatedTime
+    //     })
+    // },1000)
+    let timer = document.querySelector(".timer")
+    let startTime = 0
+    let elapsedTime = 0
+    let timerInterval;
+    function startTimer(){
+        startTime = Date.now() - elapsedTime
+        timerInterval = setInterval(()=>{
+            elapsedTime = Date.now() - startTime
+            timer.textContent = formattedTime(elapsedTime)
+        },10);
+    }
+    function formattedTime(elapsedTime) {
+        const milliseconds = Math.floor((elapsedTime % 1000) / 10);
+        const seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
+        const minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
+        const hours = Math.floor(elapsedTime / (1000 * 60 * 60));
+        return (
+            (hours ? (hours > 9 ? hours : "0" + hours) : "00") +
+            ":" +
+            (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") +
+            ":" +
+            (seconds ? (seconds > 9 ? seconds : "0" + seconds) : "00") +
+            "." +
+            (milliseconds > 9 ? milliseconds : "0" + milliseconds)
+        );
+        }
+    function pauseTimer(){
+        clearInterval(timerInterval)
+    }
+    function resetTimer(){
+        clearInterval(timerInterval)
+        timer.textContent = "00:00:00:00"
+    }
 function main() {
     // displayYear();
     // displayMonth();
     setInterval(displayCurrTime, 1000);
+    // setInterval(stopwatch,1000);
+    document.querySelector(".start").addEventListener("click",startTimer)
+    document.querySelector(".pause").addEventListener("click",pauseTimer)
+    document.querySelector(".reset").addEventListener("click", resetTimer)
 }
 main();
