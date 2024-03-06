@@ -1,5 +1,4 @@
 console.log("Clock by JS");
-"use strict"
 // function displayYear() {
 //     var y = new Date();
 //     document.getElementsByClassName("year")[0].innerHTML += y.getFullYear();

@@ -140,6 +140,47 @@ section .stopwatch .stopwatchBody .btns img{
         justify-content: center;
         align-items: center;
 } */
+.custom-shape-divider-bottom-1709711488 {
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1709711488 svg {
+    position: relative;
+    display: block;
+    width: calc(120% + 1.3px);
+    height: 204px;
+}
+
+.custom-shape-divider-bottom-1709711488 .shape-fill {
+    fill: #d8cfcf;
+}
+/* bottom curve */
+.custom-shape-divider-top-1709711244 {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1709711244 svg {
+    position: relative;
+    display: block;
+    width: calc(120% + 1.5px);
+    height: 250px;
+}
+
+.custom-shape-divider-top-1709711244 .shape-fill {
+    fill: #d8cfcf;
+}
+
 .j-c-c{
     justify-content: center;
 }
