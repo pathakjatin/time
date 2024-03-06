@@ -47,6 +47,13 @@
         justify-content: space-between;
         align-items: center;
     }
+    header .navbar .navlink{
+        transition: all 0.3s ease-in;
+    }
+    header .navbar .navlink:hover{
+        transform: scale(1.25);
+        color: #0f0ac2;
+    }
 nav ul li{
     list-style: none;
     padding: 0px 20px;
