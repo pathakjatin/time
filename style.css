@@ -6,7 +6,7 @@
 }
     body{
         max-height: 100%;
-        background-image: url('/images/night-sky.jpg');
+        background-image: url('night-sky.jpg');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
