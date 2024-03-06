@@ -56,7 +56,7 @@ function displayCurrTime() {
     let startTime = 0
     let elapsedTime = 0
     let timerInterval;
-    function startTimer(){
+    function startStopwatch(){
         startTime = Date.now() - elapsedTime
         timerInterval = setInterval(()=>{
             elapsedTime = Date.now() - startTime
@@ -78,20 +78,34 @@ function displayCurrTime() {
             (milliseconds > 9 ? milliseconds : "0" + milliseconds)
         );
         }
-    function pauseTimer(){
+    function pauseStopwatch(){
         clearInterval(timerInterval)
     }
-    function resetTimer(){
+    function resetStopwatch(){
         clearInterval(timerInterval)
         timer.textContent = "00:00:00:00"
     }
+    // hamburger menu
+function haburgerMenu(){
+    let hamburger = document.querySelector(".hamburger");
+    let nav = document.querySelector(".navbar");
+        hamburger.addEventListener("click",()=>{
+        hamburger.classList.toggle("active");
+        nav.classList.toggle("active");
+        })
+    document.querySelectorAll(".nav-link").forEach(n =>n.addEventListener("click",()=>{
+    hamburger.classList.remove("active");
+    nav.classList.remove("active");
+    }))
+}
 function main() {
     // displayYear();
     // displayMonth();
     setInterval(displayCurrTime, 1000);
     // setInterval(stopwatch,1000);
-    document.querySelector(".start").addEventListener("click",startTimer)
-    document.querySelector(".pause").addEventListener("click",pauseTimer)
-    document.querySelector(".reset").addEventListener("click", resetTimer)
+    document.querySelector(".start").addEventListener("click",startStopwatch)
+    document.querySelector(".pause").addEventListener("click",pauseStopwatch)
+    document.querySelector(".reset").addEventListener("click", resetStopwatch)
+    haburgerMenu()
 }
 main();

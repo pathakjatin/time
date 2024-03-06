@@ -91,6 +91,181 @@ section .stopwatch{
         justify-content: center;
         align-items: center;
 }
+section .stopwatch .stopwatchBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+section .stopwatch h1{
+    font-size: 40px;
+    padding-bottom: 20px;
+}
 section .stopwatch .stopwatchBody button{
     color: black;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px ;
+    background-color: #f42e35;
+}
+section .stopwatch .stopwatchBody .time{
+    background-color: red;
+    width: 250px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    border-radius: 20px ;
+}
+section .stopwatch .stopwatchBody .btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 15px 0px 15px;
+    gap: 20px;
+}
+section .stopwatch .stopwatchBody .btns img{
+    width: 20px;
+    height: 20px;
+}
+/* section .timer{
+    min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+} */
+.j-c-c{
+    justify-content: center;
+}
+.flex{
+    display: flex;
+}
+.a-c-c{
+    align-content: center;
+}
+.txt-align{
+    text-align: center;
+}
+.bg-fs{
+    font-size: 22px;
+}
+footer{
+    height: 100%;
+    padding-top: 20px;
+    position: relative;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.18);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
+}
+li{
+    list-style: none;
+}
+li a{
+    text-decoration: none;
+}
+ul{
+    padding: 10px 0px;
+}
+svg:hover{
+    transform: scale(1.25);
+    transition: all 0.3s ease-in-out 0s;
+}
+p:hover{
+    transform: scale(1.25);
+    transition: all 0.3s ease-in-out 0s;
+}
+.insta:hover{
+    fill: #d62976;
+}
+.git:hover{
+    fill: #8a7272;
+}
+.mail:hover{
+    fill: rgb(92, 150, 244)
+}
+.tweet:hover{
+    fill: #333;
+}
+.linked:hover{
+    fill: lightskyblue;
+}
+.pd{
+    padding: 20px;
+}
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #ffffff;
+}
+@media (max-width:808px){
+    .hamburger{
+        display: block;
+    }
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .navbar{
+        position: fixed;
+        left: -100%;
+        top: 75px;
+        gap: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #262626;
+        width: 90%;
+        text-align: center;
+        transition: 0.3s;
+        background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+        backdrop-filter: blur(10px)
+    }
+    .nav-item{
+        margin: 15px 0;
+    }
+    .navbar.active{
+        left: 0;
+    }
+
+}
+@media (max-width:700px){
+    .clockBody .currTime .ms{
+        font-size: 80px;
+        color: black;
+    }
+    .clockBody .currTime{
+        height: 150px;
+        width: 350px;
+    }    
+}
+@media (max-width:480px){
+    .clockBody .currTime .ms{
+        font-size: 60px;
+    }
+    .clockBody .currTime{
+        height: 120px;
+        width: 280px;
+    }     
 }
